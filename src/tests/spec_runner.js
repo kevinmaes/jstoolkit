@@ -1,6 +1,7 @@
 'use strict';
-import test from 'tape';
+import test from 'tape-catch';
 import Animal from '../index';
+import { noRemainder, filterEven } from '../lodash_poc';
 
 test('A passing test', (assert) => {
 
@@ -19,7 +20,6 @@ test('Assertions with tape.', (assert) => {
   assert.end();
 });
 
-
 test('Testing a JS Object.', (assert) => {
   // const expected = 'something to test';
   // const actual = 'sonething to test';
@@ -27,6 +27,17 @@ test('Testing a JS Object.', (assert) => {
   const sound = animal.getSound();
   assert.equal(sound, "grrrr",
     'Given two mismatched values, .equal() should produce a nice bug report');
+
+  assert.end();
+});
+
+test('Testing use of lodashfp.', (assert) => {
+  // Create an array with even and odd numbers.
+  const array = [1, 2, 3, 4];
+  let result = filterEven(noRemainder, array);
+
+  assert.deepEqual(result, [2, 4],
+    'Given an array, filterEven should return only the even values');
 
   assert.end();
 });

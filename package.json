@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/ThomsonReutersEikon/nitro-client-scaffolding/issues"
   },
-  "homepage": "https://github.com/ThomsonReutersEikon/nitro-client-scaffolding#readme"
+  "homepage": "https://github.com/ThomsonReutersEikon/nitro-client-scaffolding#readme",
+  "devDependencies": {
+    "rimraf": "^2.5.2"
+  }
 }

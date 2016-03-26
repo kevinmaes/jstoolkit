@@ -32,6 +32,7 @@
   ],
   "author": "EM Client Team",
   "license": "ISC",
+  "private": true,
   "bugs": {
     "url": "https://github.com/ThomsonReutersEikon/nitro-client-scaffolding/issues"
   },

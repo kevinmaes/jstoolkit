@@ -21,12 +21,10 @@ test('Assertions with tape.', (assert) => {
 });
 
 test('Testing a JS Object.', (assert) => {
-  // const expected = 'something to test';
-  // const actual = 'sonething to test';
   const animal = new Animal();
   const sound = animal.getSound();
   assert.equal(sound, "grrrr",
-    'Given two mismatched values, .equal() should produce a nice bug report');
+    'Animal should have the correct sound');
 
   assert.end();
 });

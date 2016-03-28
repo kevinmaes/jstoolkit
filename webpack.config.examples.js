@@ -10,15 +10,15 @@ module.exports = {
     // listen to code updates emitted by hot middleware:
     'webpack-hot-middleware/client',
     // your code:
-    './src/index'
+    './src/examples/index'
   ],
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'dist/examples'),
     filename: "bundle.js",
-    publicPath: '/dist/'
+    publicPath: '/dist/examples'
   },
 
   module: {

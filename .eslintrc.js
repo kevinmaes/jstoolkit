@@ -1,4 +1,8 @@
 module.exports = {
+  // "extends": "airbnb",
+  "plugins": [
+      "react"
+  ],
   "parserOptions": {
      "ecmaVersion": 6,
      "sourceType": "module",
@@ -6,7 +10,9 @@ module.exports = {
        "jsx": true
      }
    },
+  // See ESLint Rules: http://eslint.org/docs/rules/
   "rules": {
-    "semi": ["error", "always"]
+    "semi": ["error", "always"],
+    "comma-dangle": ["error", "always-multiline"]
   }
 };

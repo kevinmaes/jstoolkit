@@ -11,5 +11,5 @@ module.exports = {
     // Filter the array using the 'isEven' function
     // => [2, 4]
     return array.filter(isEven);
-  }
+  },
 };

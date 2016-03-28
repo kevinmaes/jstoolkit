@@ -10,8 +10,9 @@ module.exports = {
        "jsx": true
      }
    },
+  // See ESLint Rules: http://eslint.org/docs/rules/
   "rules": {
-    "semi": ["off", "always"],
-    "comma-dangle": ["off", "always"]
+    "semi": ["error", "always"],
+    "comma-dangle": ["error", "always-multiline"]
   }
 };

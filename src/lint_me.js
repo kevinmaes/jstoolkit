@@ -1,4 +1,4 @@
 module.exports = function() {
-  // Missing semicolon will be caught by eslint.
-  console.log("xyz")
+  // Remove this missing semicolon and it will be caught by eslint.
+  console.log("xyz");
 };

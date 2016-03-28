@@ -4,8 +4,6 @@ var webpack = require('webpack');
 var app = express();
 
 var config = require('./webpack.config');
-// Use this instead if you want to run the examples.
-// var config = require('./webpack.config.examples');
 
 var compiler = webpack(config);
 

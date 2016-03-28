@@ -26,8 +26,9 @@ module.exports = {
       {
         test: [/\.js$/, /\.jsx$/],
         loaders: ['babel', 'eslint-loader'],
+        include: path.join(__dirname, 'src'),
         exclude: /node_modules/,
-        loader: 'babel'
+        // loader: 'babel'
       }
     ]
   }

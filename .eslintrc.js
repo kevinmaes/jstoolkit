@@ -1,4 +1,8 @@
 module.exports = {
+  // "extends": "airbnb",
+  "plugins": [
+      "react"
+  ],
   "parserOptions": {
      "ecmaVersion": 6,
      "sourceType": "module",
@@ -7,6 +11,7 @@ module.exports = {
      }
    },
   "rules": {
-    // "semi": ["error", "always"]
+    "semi": ["off", "always"],
+    "comma-dangle": ["off", "always"]
   }
 };

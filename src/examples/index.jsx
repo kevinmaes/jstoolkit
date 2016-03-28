@@ -3,9 +3,7 @@ import { render } from 'react-dom';
 import { App } from './App';
 
 function main() {
-  const app = document.createElement('div');
-  document.body.appendChild(app);
-  render(<App />, app);
+  render(<App />, document.getElementById('root'));
 }
 
 main();

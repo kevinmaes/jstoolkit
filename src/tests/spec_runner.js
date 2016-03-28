@@ -1,7 +1,7 @@
 'use strict';
 import test from 'tape-catch';
 import Animal from '../examples/Animal';
-import { noRemainder, filterEven } from '../lodash_poc';
+import { noRemainder, filterEven } from '../examples/lodash';
 
 test('A passing test', (assert) => {
 

@@ -51,6 +51,7 @@
     "eslint-plugin-react": "^4.2.3",
     "express": "^4.13.4",
     "faucet": "0.0.1",
+    "flow-bin": "^0.22.1",
     "tape": "^4.5.1",
     "tape-catch": "^1.0.4",
     "watch": "^0.17.1",

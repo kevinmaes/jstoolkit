@@ -1,9 +1,12 @@
 var path = require('path');
 var express = require('express');
 var webpack = require('webpack');
-var config = require('./webpack.config.examples');
-
 var app = express();
+
+var config = require('./webpack.config');
+// Use this instead if you want to run the examples.
+// var config = require('./webpack.config.examples');
+
 var compiler = webpack(config);
 
 app.use(require('webpack-dev-middleware')(compiler, {

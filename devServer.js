@@ -1,14 +1,17 @@
 var path = require('path');
 var express = require('express');
 var webpack = require('webpack');
-var config = require('./webpack.config');
-
 var app = express();
+
+var config = require('./webpack.config');
+// Use this instead if you want to run the examples.
+// var config = require('./webpack.config.examples');
+
 var compiler = webpack(config);
 
 app.use(require('webpack-dev-middleware')(compiler, {
   noInfo: true,
-  publicPath: config.output.publicPath
+  publicPath: config.output.publicPath,
 }));
 
 app.use(require('webpack-hot-middleware')(compiler));

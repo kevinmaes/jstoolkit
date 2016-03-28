@@ -3,6 +3,6 @@ module.exports = () => {
   return {
     talk: () => console.log(sound),
     getSound: () => {return sound;},
-    myBool: false
+    myBool: false,
   };
 };

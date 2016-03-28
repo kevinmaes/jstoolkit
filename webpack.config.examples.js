@@ -16,11 +16,14 @@ module.exports = {
     extensions: ['', '.js', '.jsx']
   },
   output: {
-    path: path.join(__dirname, 'dist/examples'),
+    path: path.join(__dirname, 'dist'),
     filename: "bundle.js",
-    publicPath: '/dist/examples'
+    publicPath: '/dist/'
   },
-
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
+  ],
   module: {
     loaders: [
       {

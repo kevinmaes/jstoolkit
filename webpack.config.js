@@ -6,12 +6,13 @@ module.exports = {
   },
 
   module: {
-      loaders: [
-        {
-          test: /\.js$/,
-          exclude: /node_modules/,
-          loader: 'babel'
-        }
-      ]
-    }
+    loaders: [
+      {
+        test: [/\.js$/, /\.jsx$/],
+        loaders: ['babel', 'eslint-loader'],
+        exclude: /node_modules/,
+        loader: 'babel'
+      }
+    ]
+  }
 };

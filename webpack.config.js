@@ -1,4 +1,5 @@
-const path = require('path')
+var path = require('path')
+var webpack = require('webpack')
 
 module.exports = {
   entry:  __dirname + "/src/app.js",

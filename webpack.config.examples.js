@@ -10,17 +10,20 @@ module.exports = {
     // listen to code updates emitted by hot middleware:
     'webpack-hot-middleware/client',
     // your code:
-    './src/examples/index'
+    './src/index'
   ],
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
   output: {
-    path: path.join(__dirname, 'dist/examples'),
+    path: path.join(__dirname, 'dist'),
     filename: "bundle.js",
-    publicPath: '/dist/examples'
+    publicPath: '/dist/'
   },
-
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
+  ],
   module: {
     loaders: [
       {

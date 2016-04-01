@@ -1,5 +1,5 @@
 'use strict';
-import test from 'tape-catch';
+import {_, test} from './spec_helper';
 
 test('A passing test', (assert) => {
 

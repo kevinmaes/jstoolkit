@@ -15,9 +15,8 @@
     "pretest": "npm run build",
     "test": "tape dist/tests/spec_runner.js | faucet",
     "test:examples": "npm run pretest && tape dist/examples/tests/spec_runner.js | faucet",
-    "watch:src": "watch 'npm test' src",
+    "watch": "watch 'npm test' src",
     "watch:tests": "watch 'npm test' tests",
-    "watch": "npm run watch:src & npm run watch:tests"
   },
   "repository": {
     "type": "git",

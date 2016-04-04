@@ -5,7 +5,8 @@ var app = express();
 
 var config = require('./webpack.config');
 
-var PORT = 3100;
+// Change this per project.
+var PORT = 3400;
 var compiler = webpack(config);
 
 app.use(require('webpack-dev-middleware')(compiler, {

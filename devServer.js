@@ -5,6 +5,8 @@ var app = express();
 
 var config = require('./webpack.config');
 
+// Change this per project.
+var PORT = 3400;
 var compiler = webpack(config);
 
 app.use(require('webpack-dev-middleware')(compiler, {
@@ -21,11 +23,11 @@ app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.listen(3000, function(err) {
+app.listen(PORT, function(err) {
   if (err) {
     console.log(err);
     return;
   }
 
-  console.log('Listening at http://localhost:3000');
+  console.log('Listening at http://localhost:' + PORT);
 });

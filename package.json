@@ -12,7 +12,6 @@
     "webpack": "echo '=> building app' && node_modules/.bin/webpack",
     "test": "tape dist/tests/spec_runner.js | faucet",
     "pretest": "npm run build",
-    "test:examples": "npm run pretest && tape dist/examples/tests/spec_runner.js | faucet",
     "watch": "echo '=> watch' && watch 'npm test' src",
     "watch:tests": "watch 'npm test' src/tests"
   },

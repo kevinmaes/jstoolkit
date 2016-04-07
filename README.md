@@ -23,15 +23,15 @@ Formatting/Syntax Highlighting
 
 Previewing
 - aki77/source-preview-react - Preview code after compiling JSX to JS
-- leny/coffeescript-check
+- leny/coffeescript-check - Preview your compiled JS from the CoffeeScript
 
 Linters
-- AtomLinter/linter-eslint
-- AtomLinter/linter-flow
-- AtomLinter/linter-coffeelint
+- AtomLinter/linter-eslint - lint your JS according to your .eslintrc
+- AtomLinter/linter-flow - flow lint your JS according to the rules in your .flowconfig
+- AtomLinter/linter-coffeelint - lint your CS
 
 Docs
-- tgandrews/atom-easy-jsdoc
+- tgandrews/atom-easy-jsdoc - Quickly add template docs to property and method definitions
 
 For more suggestions, refer to this article, below. If you find any of these tools to
 be helpful, please add them individually to this ReadMe.

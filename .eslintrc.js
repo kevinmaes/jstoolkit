@@ -1,5 +1,5 @@
 module.exports = {
-  // "extends": "airbnb",
+  "extends": "airbnb",
   "plugins": [
       "react"
   ],
@@ -12,7 +12,7 @@ module.exports = {
    },
   // See ESLint Rules: http://eslint.org/docs/rules/
   "rules": {
-    "semi": ["off", "always"],
-    "comma-dangle": ["error", "always-multiline"]
+    "semi": ["error", "always"],
+    "comma-dangle": ["off", "always-multiline"]
   }
 };

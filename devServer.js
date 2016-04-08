@@ -1,13 +1,15 @@
-var path = require('path');
-var express = require('express');
-var webpack = require('webpack');
-var app = express();
+/* eslint no-console: "off" */
 
-var config = require('./webpack.config');
+const path = require('path');
+const express = require('express');
+const webpack = require('webpack');
+const app = express();
+
+const config = require('./webpack.config');
 
 // Change this per project.
-var PORT = 3400;
-var compiler = webpack(config);
+const PORT = 3400;
+const compiler = webpack(config);
 
 app.use(require('webpack-dev-middleware')(compiler, {
   noInfo: true,
@@ -18,16 +20,16 @@ app.use(require('webpack-hot-middleware')(compiler));
 
 app.use('/public', express.static('public'));
 
-app.get('*', function(req, res) {
-  console.log("__dirname", __dirname);
+app.get('*', (req, res) => {
+  console.log('__dirname', __dirname);
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.listen(PORT, function(err) {
+app.listen(PORT, (err) => {
   if (err) {
     console.log(err);
     return;
   }
 
-  console.log('Listening at http://localhost:' + PORT);
+  console.log(`Listening at http://localhost: ${PORT}`);
 });

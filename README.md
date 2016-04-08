@@ -20,7 +20,7 @@ Terminal
 
 React Formatting/Syntax Highlighting
 - orktes/atom-react - React/JSX formatting
-- orktes/react - React/JSX formatting
+- orktes/react - React/JSX snippets, indentation, etc.
 
 Previewing
 - aki77/source-preview-react - Preview code after compiling JSX to JS
@@ -30,6 +30,9 @@ Linters
 - AtomLinter/linter-eslint - lint your JS according to your .eslintrc
 - AtomLinter/linter-flow - flow lint your JS according to the rules in your .flowconfig
 - AtomLinter/linter-coffeelint - lint your CS
+
+Atom
+- yujinakayama/auto-update-packages - Automatically update your Atom packages
 
 Docs
 - tgandrews/atom-easy-jsdoc - Quickly add template docs to property and method definitions

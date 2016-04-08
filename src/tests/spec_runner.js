@@ -1,8 +1,6 @@
-'use strict';
-import {_, test} from './spec_helper';
+import { test } from './spec_helper';
 
 test('A passing test', (assert) => {
-
   assert.pass('This test will pass.');
 
   assert.end();

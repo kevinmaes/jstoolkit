@@ -18,8 +18,9 @@ Eikon Messenger and Nitro XMPP Client Library.
 Terminal
 - jeremyramin/terminal-plus - Terminal windows
 
-Formatting/Syntax Highlighting
+React Formatting/Syntax Highlighting
 - orktes/atom-react - React/JSX formatting
+- orktes/react - React/JSX formatting
 
 Previewing
 - aki77/source-preview-react - Preview code after compiling JSX to JS

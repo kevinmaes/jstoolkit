@@ -13,6 +13,8 @@ module.exports = {
   // See ESLint Rules: http://eslint.org/docs/rules/
   "rules": {
     "semi": ["error", "always"],
-    "comma-dangle": ["off", "always-multiline"]
+    "comma-dangle": ["off", "always-multiline"],
+    "react/prefer-stateless-function": "warn",
+    "no-unused-vars": "warn"
   }
 };

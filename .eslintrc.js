@@ -14,7 +14,13 @@ module.exports = {
   "rules": {
     "semi": ["error", "always"],
     "comma-dangle": ["off", "always-multiline"],
-    "react/prefer-stateless-function": "warn",
+    "arrow-body-style": ["error", "as-needed"],
+    "no-unused-vars": "warn",
+    "no-redeclare": "error",
+    "no-console": "warn",
+    "react/prop-types": "error",
+    "react/no-multi-comp": "error",
+    "react/jsx-closing-bracket-location": "warn",
     "no-unused-vars": "warn"
   }
 };

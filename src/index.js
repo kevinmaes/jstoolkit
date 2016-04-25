@@ -1,11 +1,5 @@
-import React from 'react';
+import WelcomeComponent from './WelcomeComponent';
 import { render } from 'react-dom';
+import React from 'react';
 
-const main = () => {
-  const app = document.createElement('div');
-  app.innerHTML = 'Welcome to the Nitro Client Scaffolding';
-  document.body.appendChild(app);
-  render(<div>This is the Nitro Client Scaffolding</div>, app);
-};
-
-main();
+render(<WelcomeComponent />, document.getElementById('app'));

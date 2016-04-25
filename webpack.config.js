@@ -1,29 +1,30 @@
-const path = require('path');
 const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
+  // devtool: 'cheap-module-eval-source-map',
   // or devtool: 'eval' to debug issues with compiled output:
-  devtool: 'cheap-module-eval-source-map',
-  entry: [
-    // necessary for hot reloading with IE:
-    // 'eventsource-polyfill',
-    // listen to code updates emitted by hot middleware:
-    'webpack-hot-middleware/client',
-    // your code:
-    './src/index'
-  ],
-  resolve: {
-    extensions: ['', '.js', '.jsx']
+  devtool: 'eval',
+
+  entry: {
+    app: [
+      'webpack-dev-server/client?http://0.0.0.0:3400',
+      'webpack/hot/only-dev-server',
+      './src/index'
+    ]
   },
+
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
-    publicPath: '/dist/'
+    filename: '[name].js',
+    path: path.join(__dirname, 'build'),
+    publicPath: '/build/'
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
-  ],
+
+  resolve: {
+    extensions: ['', '.js', '.jsx', '.css'],
+    modulesDirectories: ['src', 'node_modules']
+  },
+
   module: {
     loaders: [
       {
@@ -32,10 +33,12 @@ module.exports = {
         include: path.join(__dirname, 'src'),
         exclude: /node_modules/,
       },
-      {
-        test: /\.css$/,
-        loader: 'style!css'
-      }
     ]
-  }
+  },
+
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
+  ]
+
 };

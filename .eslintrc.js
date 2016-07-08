@@ -4,12 +4,13 @@ module.exports = {
       "react"
   ],
   "parserOptions": {
-     "ecmaVersion": 6,
-     "sourceType": "module",
-     "ecmaFeatures": {
-       "jsx": true
-     }
-   },
+   "ecmaVersion": 6,
+   "sourceType": "module",
+   "ecmaFeatures": {
+     "jsx": true,
+     "experimentalObjectRestSpread": true
+   }
+ },
   // See ESLint Rules: http://eslint.org/docs/rules/
   "rules": {
     "semi": ["error", "always"],

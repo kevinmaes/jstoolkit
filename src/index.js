@@ -1,5 +1,9 @@
-import WelcomeComponent from './components/WelcomeComponent';
 import { render } from 'react-dom';
 import React from 'react';
+import configureStore from './store/configureStore';
+import Root from './components/containers/Root';
 
-render(<WelcomeComponent />, document.getElementById('app'));
+// Create the Redux store.
+const store = configureStore();
+
+render(<Root store={store} />, document.getElementById('app'));

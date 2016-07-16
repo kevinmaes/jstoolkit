@@ -1,5 +1,5 @@
 import React from 'react';
 
-const WelcomeComponent = () => (<div>Welcome to the Client Scaffolding project!</div>);
+const WelcomeComponent = () => (<div>Welcome to Scaffolding!</div>);
 
 export default WelcomeComponent;

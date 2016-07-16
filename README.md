@@ -38,4 +38,3 @@ Docs
 For more suggestions, refer to this article, below. If you find any of these tools to
 be helpful, please add them individually to this ReadMe.
 https://medium.com/@satya164/supercharged-javascript-development-in-atom-ea034e22eabc#.etykyne2v
->>>>>>> 793b455d10543f539818a24cb3df9881e8aacc1e

@@ -1,4 +1,4 @@
-import WelcomeComponent from './WelcomeComponent';
+import WelcomeComponent from './components/WelcomeComponent';
 import { render } from 'react-dom';
 import React from 'react';
 

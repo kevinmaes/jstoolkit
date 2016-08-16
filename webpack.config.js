@@ -33,13 +33,10 @@ module.exports = {
         include: path.join(__dirname, 'src'),
         exclude: /node_modules/,
       },
-<<<<<<< HEAD
       {
         test: /\.css$/,
         loader: 'style!css?modules'
       }
-=======
->>>>>>> 0ff91369da4c3dd18517565a6b567e2af7de518d
     ]
   },
 

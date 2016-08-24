@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "clean": "rimraf dist",
-    "start": "node server.js",
+    "start": "webpack-dashboard -- node server.js",
     "lint": "eslint src && eslint tests",
     "test": "testem"
   },
@@ -60,6 +60,7 @@
     "tape-jsx-equals": "1.0.0",
     "testem": "^0.7.5",
     "watch": "^0.17.1",
+    "webpack-dashboard": "^0.1.8",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-dev-server": "^1.7.0",
     "webpack-hot-middleware": "^2.10.0"

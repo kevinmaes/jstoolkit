@@ -1,4 +1,6 @@
-import { createStore, applyMiddleware, compose } from 'redux';
+/* eslint no-undef: "off"*/
+// import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, compose } from 'redux';
 import reducer from '../reducers/';
 // import plugins from './plugins';
 

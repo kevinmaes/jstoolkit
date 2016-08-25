@@ -4,7 +4,7 @@ import App from '../App';
 import ReduxDevTools from '../ReduxDevTools';
 
 const Root = ({ store }) => (
-  <Provider store={ store }>
+  <Provider store={store}>
     <div>
       <App />
       <ReduxDevTools />

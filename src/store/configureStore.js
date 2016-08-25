@@ -1,3 +1,4 @@
+/* eslint global-require: "off" */
 // Use DefinePlugin (Webpack) together with Uglify to strip the
 // dev branch in prod build.
 if (process.env.NODE_ENV === 'production') {

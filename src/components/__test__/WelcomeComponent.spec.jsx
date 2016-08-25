@@ -1,5 +1,5 @@
-import { test, createComponent, createRenderer } from '../../spec_helper';
 import React from 'react';
+import { test, createComponent, createRenderer } from '../../spec_helper';
 import WelcomeComponent from '../WelcomeComponent';
 
 test('Test the welcome component text', (t) => {

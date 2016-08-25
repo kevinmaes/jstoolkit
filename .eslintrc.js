@@ -22,6 +22,7 @@ module.exports = {
     "react/prop-types": "error",
     "react/no-multi-comp": "error",
     "react/jsx-closing-bracket-location": "warn",
-    "no-unused-vars": "warn"
+    "no-unused-vars": "warn",
+    "import/no-named-as-default": "off"
   }
 };

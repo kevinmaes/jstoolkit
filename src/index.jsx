@@ -1,3 +1,4 @@
+/* eslint no-undef: "off"*/
 import { render } from 'react-dom';
 import React from 'react';
 import configureStore from './store/configureStore';

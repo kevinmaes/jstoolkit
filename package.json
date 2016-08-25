@@ -58,7 +58,7 @@
     "tape": "^4.5.1",
     "tape-catch": "^1.0.4",
     "tape-jsx-equals": "1.0.0",
-    "testem": "^0.7.5",
+    "testem": "^1.10.4",
     "watch": "^0.17.1",
     "webpack-dashboard": "^0.1.8",
     "webpack-dev-middleware": "^1.6.1",

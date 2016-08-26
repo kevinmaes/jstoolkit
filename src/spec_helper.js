@@ -8,6 +8,7 @@ import jsxEquals from 'tape-jsx-equals';
 import chai from 'chai';
 import sinonChai from 'sinon-chai';
 import addAssertions from 'extend-tape';
+import td from 'testdouble';
 
 // There are known issues with using Sinon and Webpack (problem is with Sinon).
 // One solution, halfway down this page, is to require a specific
@@ -25,4 +26,4 @@ chai.use(sinonChai);
 
 const test = addAssertions(tape, { jsxEquals });
 
-export { test, _, deepFreeze, createComponent, createRenderer, sinon };
+export { test, _, deepFreeze, createComponent, createRenderer, sinon, td };

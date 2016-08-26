@@ -1,4 +1,14 @@
-import { test, sinon } from '../spec_helper';
+import { test, sinon, td } from '../spec_helper';
+
+test('TestDouble func()', (t) => {
+  const stub = td.func();
+
+  stub(1, 2);
+
+  td.verify(stub(1, 2));
+
+  t.end();
+});
 
 test('sinon stubs', (t) => {
   const stub = sinon.stub();

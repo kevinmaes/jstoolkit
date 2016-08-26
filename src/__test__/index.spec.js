@@ -10,7 +10,20 @@ test('TestDouble func()', (t) => {
   t.end();
 });
 
-test('sinon stubs', (t) => {
+test('TestDouble func() that returns a value', (t) => {
+  const stub = td.when(td.function()('somearg'))
+    .thenReturn(42);
+
+  const result = stub('somearg');
+
+  td.verify(stub('somearg'));
+
+  t.equals(result, 42, 'stub return value');
+
+  t.end();
+});
+
+test('Sinon stubs', (t) => {
   const stub = sinon.stub();
 
   stub('123');

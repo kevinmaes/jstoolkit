@@ -1,6 +1,29 @@
-import { test, sinon } from '../spec_helper';
+import { test, sinon, td } from '../spec_helper';
 
-test('sinon stubs', (t) => {
+test('TestDouble func()', (t) => {
+  const stub = td.func();
+
+  stub(1, 2);
+
+  td.verify(stub(1, 2));
+
+  t.end();
+});
+
+test('TestDouble func() that returns a value', (t) => {
+  const stub = td.when(td.function()('somearg'))
+    .thenReturn(42);
+
+  const result = stub('somearg');
+
+  td.verify(stub('somearg'));
+
+  t.equals(result, 42, 'stub return value');
+
+  t.end();
+});
+
+test('Sinon stubs', (t) => {
   const stub = sinon.stub();
 
   stub('123');
@@ -19,7 +42,7 @@ test.skip('src basic arithmetic', (t) => {
   t.plan(4);
 
   t.equal(2 + 3, 5);
-  t.equal(7 * 8 + 9, 65);
+  t.equal((7 * 8) + 9, 65);
   t.equal(1 + 2, 3);
   t.equal(3 + 4, 7);
 });
@@ -28,7 +51,7 @@ test.skip('src basic arithmetic 2', (t) => {
   t.plan(4);
 
   t.equal(2 + 3, 5);
-  t.equal(7 * 8 + 9, 65);
+  t.equal((7 * 8) + 9, 65);
   t.equal(1 + 2, 3);
   t.equal(3 + 4, 7);
 });

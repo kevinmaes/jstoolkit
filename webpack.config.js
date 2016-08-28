@@ -8,7 +8,7 @@ module.exports = {
 
   entry: {
     app: [
-      'webpack-dev-server/client?http://0.0.0.0:4000',
+      'webpack-dev-server/client?http://0.0.0.0:4700',
       'webpack/hot/only-dev-server',
       './src/index'
     ]

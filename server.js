@@ -21,9 +21,8 @@ new WebpackDevServer(webpack(config), {
   historyApiFallback: true,
   stats: { colors: true }
 })
-.listen(4000, 'localhost', (err) => {
+.listen(4700, 'localhost', (err) => {
   if (err) {
     // console.log(err);
   }
-  // console.log('Listening at localhost:4000');
 });

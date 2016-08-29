@@ -1,5 +1,1 @@
-import keyMirror from './utils/keyMirror';
-
-export {
-  keyMirror
-};
+export const keyMirror = require('./utils/keyMirror');

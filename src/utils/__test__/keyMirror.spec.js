@@ -10,6 +10,24 @@ test('[keyMirror]', (t) => {
     a: 'a',
     b: 'b',
     c: 'c'
+  }, 'create a key mirror for an array with keys as element values');
+
+  t.end();
+});
+
+test('[keyMirror]', (t) => {
+  const obj = {
+    a: null,
+    b: null,
+    c: null
+  };
+
+  const result = keyMirror(obj);
+
+  t.deepEquals(result, {
+    a: 'a',
+    b: 'b',
+    c: 'c'
   }, 'create a key mirror for an object with keys');
 
   t.end();

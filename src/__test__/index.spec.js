@@ -5,7 +5,7 @@ test.skip('simple test equals', (t) => {
   t.end();
 });
 
-test('TestDouble func()', (t) => {
+test.skip('TestDouble func()', (t) => {
   const stub = td.func('.stub');
 
   stub(1, 2);
@@ -16,7 +16,7 @@ test('TestDouble func()', (t) => {
   t.end();
 });
 
-test('TestDouble func() that returns a value', (t) => {
+test.skip('TestDouble func() that returns a value', (t) => {
   const stub = td.when(td.function()('somearg'))
     .thenReturn(42);
 

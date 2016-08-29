@@ -1,4 +1,4 @@
-import { tape as test } from '../../spec_helper';
+import { test } from '../../spec_helper';
 import keyMirror from '../keyMirror';
 
 test('[keyMirror]', (t) => {

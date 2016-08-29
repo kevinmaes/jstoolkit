@@ -10,7 +10,7 @@ test('[keyMirror]', (t) => {
     a: 'a',
     b: 'b',
     c: 'c'
-  });
+  }, 'create a key mirror for an object with keys');
 
   t.end();
 });

@@ -21,14 +21,14 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['', '.js', '.jsx', '.css'],
+    extensions: ['', '.js'],
     modulesDirectories: ['src', 'node_modules']
   },
 
   module: {
     loaders: [
       {
-        test: [/\.js$/, /\.jsx$/],
+        test: /\.js$/,
         loaders: ['babel', 'eslint-loader'],
         include: path.join(__dirname, 'src'),
         exclude: /node_modules/,

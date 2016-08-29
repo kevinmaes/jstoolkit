@@ -13,7 +13,7 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.jsx?$/,
+        test: /\.jsx$/,
         exclude: /node_modules/,
         loader: 'babel'
       }
@@ -21,7 +21,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['', '.js'],
     modulesDirectories: ['src', 'node_modules']
   },
 

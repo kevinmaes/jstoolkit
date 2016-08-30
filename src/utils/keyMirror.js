@@ -1,11 +1,8 @@
-export default keys => {
-  const keysArr = Array.isArray(keys) ? keys : Object.keys(keys);
-  const mirror = {};
-  keysArr.forEach(key => mirror[key] = key);
-  return mirror;
+export const getKeys = keys =>
+  Array.isArray(keys) ? keys : Object.keys(keys);
 
-  // return keysArr.reduce((obj, key) =>
-  //   obj[key] = key, obj
-  // , {}
-
-};
+export default keys =>
+  getKeys(keys).reduce((obj, key) => {
+    obj[key] = key;
+    return obj;
+  }, {});

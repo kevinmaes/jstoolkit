@@ -1,5 +1,5 @@
-import { test } from '../../spec_helper';
-import filterMap, { identity, property } from '../filterMap';
+import { test, td } from '../../spec_helper';
+import filterMap, { identity, property, result } from '../filterMap';
 
 test('[filterMap] identity', (t) => {
   const arg = 'arg'
@@ -49,6 +49,41 @@ test('[filterMap] prop - non string passed as property param', (t) => {
   t.equals(property(true, obj), undefined, 'return value should be undefined for a non-string property');
   t.equals(property(false, obj), undefined, 'return value should be undefined for a non-string property');
   t.equals(property([], obj), undefined, 'return value should be undefined for a non-string property');
+
+  t.end();
+});
+
+test('[filterMap] result - property value', (t) => {
+  const obj = { getValue: 'value' }
+
+  const testResult = result('getValue', obj);
+
+  t.equals(testResult, 'value',
+    'return value should equal the prop value on the object');
+
+  t.end();
+});
+
+test('[filterMap] result - property does not exist on object', (t) => {
+  const obj = {}
+
+  const testResult = result('getValue', obj);
+
+  t.equals(testResult, undefined,
+    'return value should equal the prop value on the object');
+
+  t.end();
+});
+
+test('[filterMap] result - property is a method', (t) => {
+  const getValue = td.func('getValue')
+  const obj = { getValue }
+  td.when(getValue()).thenReturn('value')
+
+  const testResult = result('getValue', obj);
+
+  t.equals(testResult, 'value',
+    'return value should equal the value returned from the method on obj');
 
   t.end();
 });
@@ -174,6 +209,42 @@ test('[filterMap] passing in an optional "until" value', (t) => {
 
   t.deepEquals(result, [1, 3],
     'return value should be an array containing only the first 2 odd values');
+
+  t.end();
+});
+
+test('[filterMap] passing in filter function and a map property string', (t) => {
+  const array = [
+    { id: 1, val: '1' },
+    { id: 2, val: '2' },
+    { id: 3, val: '3' },
+    { id: 4, val: '4' },
+    { id: 5, val: '5' }
+  ]
+  const isEven = arg => !(arg.id % 2)
+
+  const result = filterMap(isEven, 'val', array);
+
+  t.deepEquals(result, ['2', '4'],
+    'return value should be an array of values of the filtered object array');
+
+  t.end();
+});
+
+test('[filterMap] passing in filter function and a map property string (method name)', (t) => {
+  const array = [
+    { id: 1, val: () => '1' },
+    { id: 2, val: () => '2' },
+    { id: 3, val: () => '3' },
+    { id: 4, val: () => '4' },
+    { id: 5, val: () => '5' }
+  ]
+  const isEven = arg => !(arg.id % 2)
+
+  const result = filterMap(isEven, 'val', array);
+
+  t.deepEquals(result, ['2', '4'],
+    'return value should be an array of result values of the filtered object array');
 
   t.end();
 });

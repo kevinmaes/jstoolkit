@@ -12,7 +12,8 @@ export const result = (name, obj) => {
   return (typeof prop === 'function') ? prop() : prop
 }
 
-// A reducer implementation that simultanously filters and maps over an array,\
+// filterMap() utility.
+// A reducer implementation that simultanously filters and then maps over an array,
 // only looping over the array once.
 export default (filter = identity, map = identity, array = [], until) =>
   array.reduce((acc, next) => {

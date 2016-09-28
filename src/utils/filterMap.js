@@ -2,7 +2,8 @@
 export const identity = x => x;
 
 // A generic object property getter function.
-export const property = (prop = '', obj) => obj[prop]
+export const property = (prop = '', obj) =>
+  typeof obj === 'object' ? obj[prop] : undefined
 
 // A reducer implementation that simultanously filters and maps over an array,\
 // only looping over the array once.

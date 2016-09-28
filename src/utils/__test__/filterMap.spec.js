@@ -11,7 +11,15 @@ test('[filterMap] identity', (t) => {
   t.end();
 });
 
-test('[filterMap] prop', (t) => {
+test('[filterMap] prop - non-object passed instead of an object', (t) => {
+  const result = property('', '');
+
+  t.equals(result, undefined, 'return value should be undefined');
+
+  t.end();
+});
+
+test('[filterMap] prop - existing property on an object', (t) => {
   const prop = 'prop'
   const obj = { prop }
 
@@ -22,12 +30,25 @@ test('[filterMap] prop', (t) => {
   t.end();
 });
 
-test('[filterMap] prop', (t) => {
+test('[filterMap] prop - missing property on an object', (t) => {
   const obj = {}
 
   const result = property('missing', obj);
 
   t.equals(result, undefined, 'return value should be undefined for a missing property');
+
+  t.end();
+});
+
+test('[filterMap] prop - non string passed as property param', (t) => {
+  const obj = { prop: 'value' }
+
+  t.equals(property({}, obj), undefined, 'return value should be undefined for a non-string property');
+  t.equals(property(null, obj), undefined, 'return value should be undefined for a non-string property');
+  t.equals(property(undefined, obj), undefined, 'return value should be undefined for a non-string property');
+  t.equals(property(true, obj), undefined, 'return value should be undefined for a non-string property');
+  t.equals(property(false, obj), undefined, 'return value should be undefined for a non-string property');
+  t.equals(property([], obj), undefined, 'return value should be undefined for a non-string property');
 
   t.end();
 });

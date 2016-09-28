@@ -12,7 +12,7 @@ module.exports = {
  },
   // See ESLint Rules: http://eslint.org/docs/rules/
   "rules": {
-    "semi": ["error", "always"],
+    "semi": ["off"],
     "comma-dangle": ["off", "always-multiline"],
     "arrow-body-style": ["error", "as-needed"],
     "no-unused-vars": "warn",

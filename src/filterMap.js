@@ -12,6 +12,25 @@ import { identity, result } from './utils/'
  * desired array results.
  *
  * @return {string[]} An array of key values (strings).
+ *
+ * @example
+ * const const array = [
+ *   { id: 1, val: '1' },
+ *   { id: 2, val: '2' },
+ *   { id: 3, val: '3' },
+ *   { id: 4, val: '4' },
+ *   { id: 5, val: '5' },
+ * ]
+ * const isOdd = arg => !!(arg % 2)
+ * const getVal = arg => arg.val
+ *
+ * // Invoke filterMap with filter function, map function, and array data.
+ * const odds = filterMap(isOdd, getVal, array)
+ * console.log(mirror) // { '1', '3', '5' }
+ *
+ * // Pass optional 'until' param with a value of 2 to limit length of results.
+ * const twoOdds = filterMap(isOdd, getVal, array, 2)
+ * console.log(mirror) // { '1', '3' }
  */
 export default (filter = identity, map = identity, array = [], until) =>
   array.reduce((acc, next) => {

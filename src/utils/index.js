@@ -2,7 +2,7 @@
  * Identity function to use as a default iterator.
  *
  * @param {*} x - Any argument can be passed to this function.
- * 
+ *
  * @return {*} The same value that was passed to this function.
  */
 export const identity = x => x;
@@ -30,3 +30,11 @@ export const result = (name, obj) => {
   const prop = obj[name]
   return (typeof prop === 'function') ? prop() : prop
 }
+
+/**
+ * Get keys from an array or an object
+ * @param {string[]|object} keys - An array or object whose elements or keys are key values.
+ * @return {string[]} An array of key values (strings).
+ */
+export const getKeys = keys =>
+  Array.isArray(keys) ? keys : Object.keys(keys);

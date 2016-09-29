@@ -1,10 +1,4 @@
-/**
- * Get keys from an array or an object
- * @param {string[]|object} keys - An array or object whose elements or keys are key values.
- * @return {string[]} An array of key values (strings).
- */
-export const getKeys = keys =>
-  Array.isArray(keys) ? keys : Object.keys(keys);
+import { getKeys } from './utils/'
 
 /**
  * Transform an array or an object with key values into an object with key/value

@@ -1,5 +1,5 @@
 import { test, td } from '../../spec_helper';
-import { identity, property, result } from '../';
+import { identity, property, result, getKeys } from '../';
 
 test('[identity]', t => {
   const arg = 'arg'
@@ -84,6 +84,41 @@ test('[result] property is a method', t => {
 
   t.equals(testResult, 'value',
     'return value should equal the value returned from the method on obj');
+
+  t.end();
+});
+
+test('[getKeys]', t => {
+  const array = ['a', 'b', 'c'];
+
+  const result = getKeys(array);
+
+  t.deepEquals(result, array, 'keys should be a similar array');
+
+  t.end();
+});
+
+test('[getKeys]', t => {
+  const array = ['a', 'b', 'c'];
+
+  const result = getKeys(array);
+
+  t.deepEquals(result, array, 'keys should be a similar array');
+
+  t.end();
+});
+
+test('[getKeys]', t => {
+  const obj = {
+    a: null,
+    b: null,
+    c: null
+  };
+
+  const result = getKeys(obj);
+
+  t.deepEquals(result, ['a', 'b', 'c'],
+    'keys should be an array of the object keys');
 
   t.end();
 });

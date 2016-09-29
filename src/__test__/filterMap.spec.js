@@ -1,7 +1,7 @@
 import { test } from '../spec_helper';
 import filterMap from '../filterMap';
 
-test('[filterMap] omitting the filter and map args', (t) => {
+test('[filterMap] omitting the filter and map args', t => {
   const array = [1, 2, 3, 4, 5]
 
   const result = filterMap(undefined, undefined, array);
@@ -11,7 +11,7 @@ test('[filterMap] omitting the filter and map args', (t) => {
   t.end();
 });
 
-test('[filterMap] passing in a filter function, "isEven"', (t) => {
+test('[filterMap] passing in a filter function, "isEven"', t => {
   const array = [1, 2, 3, 4, 5]
   const isEven = arg => !(arg % 2)
 
@@ -22,7 +22,7 @@ test('[filterMap] passing in a filter function, "isEven"', (t) => {
   t.end();
 });
 
-test('[filterMap] passing in a filter function, "isString"', (t) => {
+test('[filterMap] passing in a filter function, "isString"', t => {
   const array = [1, 2, 3, 4, 5]
   const isString = arg => typeof arg === 'string'
 
@@ -34,7 +34,7 @@ test('[filterMap] passing in a filter function, "isString"', (t) => {
   t.end();
 });
 
-test('[filterMap] passing in a map function (no filter function)', (t) => {
+test('[filterMap] passing in a map function (no filter function)', t => {
   const array = [
     { id: 1, val: '1' },
     { id: 2, val: '2' },
@@ -52,7 +52,7 @@ test('[filterMap] passing in a map function (no filter function)', (t) => {
   t.end();
 });
 
-test('[filterMap] passing in filter and map functions', (t) => {
+test('[filterMap] passing in filter and map functions', t => {
   const array = [
     { id: 1, val: '1' },
     { id: 2, val: '2' },
@@ -71,7 +71,7 @@ test('[filterMap] passing in filter and map functions', (t) => {
   t.end();
 });
 
-test('[filterMap] passing in a composed filter function and map function', (t) => {
+test('[filterMap] passing in a composed filter function and map function', t => {
   const array = [
     { id: 1, val: '1' },
     { id: 2, val: '2' },
@@ -92,7 +92,7 @@ test('[filterMap] passing in a composed filter function and map function', (t) =
   t.end();
 });
 
-test('[filterMap] passing in comosed filter and map functions', (t) => {
+test('[filterMap] passing in comosed filter and map functions', t => {
   const array = [
     { id: 1, val: '1' },
     { id: 2, val: '2' },
@@ -114,7 +114,7 @@ test('[filterMap] passing in comosed filter and map functions', (t) => {
   t.end();
 });
 
-test('[filterMap] passing in an optional "until" value', (t) => {
+test('[filterMap] passing in an optional "until" value', t => {
   const array = [1, 2, 3, 4, 5]
   const isOdd = arg => !!(arg % 2)
 
@@ -126,7 +126,7 @@ test('[filterMap] passing in an optional "until" value', (t) => {
   t.end();
 });
 
-test('[filterMap] passing in filter function and a map property string', (t) => {
+test('[filterMap] passing in filter function and a map property string', t => {
   const array = [
     { id: 1, val: '1' },
     { id: 2, val: '2' },
@@ -144,7 +144,7 @@ test('[filterMap] passing in filter function and a map property string', (t) => 
   t.end();
 });
 
-test('[filterMap] passing in filter function and a map property string (method name)', (t) => {
+test('[filterMap] passing in filter function and a map property string (method name)', t => {
   const array = [
     { id: 1, val: () => '1' },
     { id: 2, val: () => '2' },

@@ -1,7 +1,7 @@
 import { test, td } from '../../spec_helper';
 import { identity, property, result } from '../';
 
-test('[identity]', (t) => {
+test('[identity]', t => {
   const arg = 'arg'
 
   const result = identity(arg);
@@ -11,7 +11,7 @@ test('[identity]', (t) => {
   t.end();
 });
 
-test('[prop] non-object passed instead of an object', (t) => {
+test('[prop] non-object passed instead of an object', t => {
   const result = property('', '');
 
   t.equals(result, undefined, 'return value should be undefined');
@@ -19,7 +19,7 @@ test('[prop] non-object passed instead of an object', (t) => {
   t.end();
 });
 
-test('[prop] existing property on an object', (t) => {
+test('[prop] existing property on an object', t => {
   const prop = 'prop'
   const obj = { prop }
 
@@ -30,7 +30,7 @@ test('[prop] existing property on an object', (t) => {
   t.end();
 });
 
-test('[prop] missing property on an object', (t) => {
+test('[prop] missing property on an object', t => {
   const obj = {}
 
   const result = property('missing', obj);
@@ -40,7 +40,7 @@ test('[prop] missing property on an object', (t) => {
   t.end();
 });
 
-test('[prop] non string passed as property param', (t) => {
+test('[prop] non string passed as property param', t => {
   const obj = { prop: 'value' }
 
   t.equals(property({}, obj), undefined, 'return value should be undefined for a non-string property');
@@ -53,7 +53,7 @@ test('[prop] non string passed as property param', (t) => {
   t.end();
 });
 
-test('[result] property value', (t) => {
+test('[result] property value', t => {
   const obj = { getValue: 'value' }
 
   const testResult = result('getValue', obj);
@@ -64,7 +64,7 @@ test('[result] property value', (t) => {
   t.end();
 });
 
-test('[result] property does not exist on object', (t) => {
+test('[result] property does not exist on object', t => {
   const obj = {}
 
   const testResult = result('getValue', obj);
@@ -75,7 +75,7 @@ test('[result] property does not exist on object', (t) => {
   t.end();
 });
 
-test('[result] property is a method', (t) => {
+test('[result] property is a method', t => {
   const getValue = td.func('getValue')
   const obj = { getValue }
   td.when(getValue()).thenReturn('value')

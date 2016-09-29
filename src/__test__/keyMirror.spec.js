@@ -1,7 +1,7 @@
 import { test } from '../spec_helper';
 import keyMirror, { getKeys } from '../keyMirror';
 
-test('[keyMirror] getKeys', (t) => {
+test('[keyMirror] getKeys', t => {
   const array = ['a', 'b', 'c'];
 
   const result = getKeys(array);
@@ -11,7 +11,7 @@ test('[keyMirror] getKeys', (t) => {
   t.end();
 });
 
-test('[keyMirror] getKeys', (t) => {
+test('[keyMirror] getKeys', t => {
   const array = ['a', 'b', 'c'];
 
   const result = getKeys(array);
@@ -21,7 +21,7 @@ test('[keyMirror] getKeys', (t) => {
   t.end();
 });
 
-test('[keyMirror]', (t) => {
+test('[keyMirror]', t => {
   const obj = {
     a: null,
     b: null,
@@ -36,7 +36,7 @@ test('[keyMirror]', (t) => {
   t.end();
 });
 
-test('[keyMirror]', (t) => {
+test('[keyMirror]', t => {
   const obj = {
     a: null,
     b: null,

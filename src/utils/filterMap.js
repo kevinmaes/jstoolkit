@@ -1,8 +1,4 @@
-// Identity function to use as a default iterator.
-export const identity = x => x;
-
-// A generic object property getter function.
-export const property = (prop = '', obj) => obj[prop]
+import { identity } from 'utils/object'
 
 // A reducer implementation that simultanously filters and maps over an array,\
 // only looping over the array once.

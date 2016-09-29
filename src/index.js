@@ -1,2 +1,3 @@
-export const keyMirror = require('./utils/keyMirror');
-export const filterMap = require('./utils/filterMap');
+export const keyMirror = require('./keyMirror');
+export const filterMap = require('./filterMap');
+export const utils = require('./utils/');

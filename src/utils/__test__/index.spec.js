@@ -1,5 +1,5 @@
 import { test, td } from '../../spec_helper';
-import { identity, property, result } from '../object';
+import { identity, property, result } from '../';
 
 test('[identity]', (t) => {
   const arg = 'arg'

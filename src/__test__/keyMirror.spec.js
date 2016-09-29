@@ -1,4 +1,4 @@
-import { test } from '../../spec_helper';
+import { test } from '../spec_helper';
 import keyMirror, { getKeys } from '../keyMirror';
 
 test('[keyMirror] getKeys', (t) => {

@@ -1,4 +1,4 @@
-import { identity, result } from './object'
+import { identity, result } from './utils/'
 
 // filterMap() utility.
 // A reducer implementation that simultanously filters and then maps over an array,

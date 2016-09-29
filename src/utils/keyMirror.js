@@ -1,14 +1,16 @@
 /**
  * Get keys from an array or an object
- * @param {array:object} keys An array or object whose elements or keys are key values.
- * @return {array} An array of key values (strings).
+ * @param {string[]|object} keys - An array or object whose elements or keys are key values.
+ * @return {string[]} An array of key values (strings).
  */
 export const getKeys = keys =>
   Array.isArray(keys) ? keys : Object.keys(keys);
 
 /**
+ * @module utils/keyMirror
+ *
  * Get keys from an array or an object
- * @param {array:object} keys An array or object whose elements or keys are key values.
+ * @param {string[]|object} keys - An array or object whose elements or keys are key values.
  * @return {object} An object whose key/value pairs match the keys passed in.
  *
  * @example

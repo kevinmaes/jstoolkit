@@ -7,9 +7,9 @@ export const getKeys = keys =>
   Array.isArray(keys) ? keys : Object.keys(keys);
 
 /**
- * @module utils/keyMirror
+ * Transform an array or an object with key values into an object with key/value
+ * pairs where the values are string representations of the keys.
  *
- * Get keys from an array or an object
  * @param {string[]|object} keys - An array or object whose elements or keys are key values.
  * @return {object} An object whose key/value pairs match the keys passed in.
  *

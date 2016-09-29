@@ -26,11 +26,11 @@ import { identity, result } from './utils/'
  *
  * // Invoke filterMap with filter function, map function, and array data.
  * const odds = filterMap(isOdd, getVal, array)
- * console.log(mirror) // { '1', '3', '5' }
+ * // => { '1', '3', '5' }
  *
  * // Pass optional 'until' param with a value of 2 to limit length of results.
  * const twoOdds = filterMap(isOdd, getVal, array, 2)
- * console.log(mirror) // { '1', '3' }
+ * // => { '1', '3' }
  */
 export default (filter = identity, map = identity, array = [], until) =>
   array.reduce((acc, next) => {

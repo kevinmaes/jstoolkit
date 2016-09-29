@@ -16,12 +16,12 @@ export const getKeys = keys =>
  * @example
  * const keys = ['one', 'two', 'three']
  * const mirror = keyMirror(keys)
- * console.log(mirror) // { one: 'one', two: 'two', three: 'three' }
+ * // => { one: 'one', two: 'two', three: 'three' }
  *
  * @example
  * const keys = { one: null, two: null, three: null }
  * const mirror = keyMirror(keys)
- * console.log(mirror) // { one: 'one', two: 'two', three: 'three' }
+ * // => { one: 'one', two: 'two', three: 'three' }
  */
 export default keys =>
   getKeys(keys).reduce((obj, key) => {

@@ -23,10 +23,8 @@ export const getKeys = keys =>
  * const mirror = keyMirror(keys)
  * console.log(mirror) // { one: 'one', two: 'two', three: 'three' }
  */
-export const keyMirror = keys =>
+export default keys =>
   getKeys(keys).reduce((obj, key) => {
     obj[key] = key;
     return obj;
   }, {});
-
-// export default keyMirror

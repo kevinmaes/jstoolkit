@@ -1,7 +1,7 @@
-import { test } from '../../spec_helper';
-import { identity, property } from '../object';
+import { test, td } from '../../spec_helper';
+import { identity, property, result } from '../object';
 
-test('[filterMap] identity', (t) => {
+test('[identity]', (t) => {
   const arg = 'arg'
 
   const result = identity(arg);
@@ -11,7 +11,15 @@ test('[filterMap] identity', (t) => {
   t.end();
 });
 
-test('[filterMap] prop', (t) => {
+test('[prop] non-object passed instead of an object', (t) => {
+  const result = property('', '');
+
+  t.equals(result, undefined, 'return value should be undefined');
+
+  t.end();
+});
+
+test('[prop] existing property on an object', (t) => {
   const prop = 'prop'
   const obj = { prop }
 
@@ -22,12 +30,60 @@ test('[filterMap] prop', (t) => {
   t.end();
 });
 
-test('[filterMap] prop', (t) => {
+test('[prop] missing property on an object', (t) => {
   const obj = {}
 
   const result = property('missing', obj);
 
   t.equals(result, undefined, 'return value should be undefined for a missing property');
+
+  t.end();
+});
+
+test('[prop] non string passed as property param', (t) => {
+  const obj = { prop: 'value' }
+
+  t.equals(property({}, obj), undefined, 'return value should be undefined for a non-string property');
+  t.equals(property(null, obj), undefined, 'return value should be undefined for a non-string property');
+  t.equals(property(undefined, obj), undefined, 'return value should be undefined for a non-string property');
+  t.equals(property(true, obj), undefined, 'return value should be undefined for a non-string property');
+  t.equals(property(false, obj), undefined, 'return value should be undefined for a non-string property');
+  t.equals(property([], obj), undefined, 'return value should be undefined for a non-string property');
+
+  t.end();
+});
+
+test('[result] property value', (t) => {
+  const obj = { getValue: 'value' }
+
+  const testResult = result('getValue', obj);
+
+  t.equals(testResult, 'value',
+    'return value should equal the prop value on the object');
+
+  t.end();
+});
+
+test('[result] property does not exist on object', (t) => {
+  const obj = {}
+
+  const testResult = result('getValue', obj);
+
+  t.equals(testResult, undefined,
+    'return value should equal the prop value on the object');
+
+  t.end();
+});
+
+test('[result] property is a method', (t) => {
+  const getValue = td.func('getValue')
+  const obj = { getValue }
+  td.when(getValue()).thenReturn('value')
+
+  const testResult = result('getValue', obj);
+
+  t.equals(testResult, 'value',
+    'return value should equal the value returned from the method on obj');
 
   t.end();
 });

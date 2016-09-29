@@ -1,6 +1,5 @@
 import { test } from '../../spec_helper';
-// import keyMirror, { getKeys } from '../keyMirror';
-import { keyMirror, getKeys } from '../keyMirror';
+import keyMirror, { getKeys } from '../keyMirror';
 
 test('[keyMirror] getKeys', (t) => {
   const array = ['a', 'b', 'c'];

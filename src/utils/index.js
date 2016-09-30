@@ -1,3 +1,4 @@
+import _ from 'lodash/fp'
 /**
  * Identity function to use as a default iterator.
  *
@@ -38,3 +39,7 @@ export const result = (name, obj) => {
  */
 export const getKeys = keys =>
   Array.isArray(keys) ? keys : Object.keys(keys);
+
+
+export const composeFilters = (...filters) =>
+  (...args) => !_.find(fn => !fn.apply(fn, args), filters)

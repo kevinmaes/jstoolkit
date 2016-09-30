@@ -1,4 +1,4 @@
-import { getKeys } from './utils/'
+import { toKeys } from './utils/'
 
 /**
  * Transform an array or an object with key values into an object with key/value
@@ -18,7 +18,7 @@ import { getKeys } from './utils/'
  * // => { one: 'one', two: 'two', three: 'three' }
  */
 export default keys =>
-  getKeys(keys).reduce((obj, key) => {
+  toKeys(keys).reduce((obj, key) => {
     obj[key] = key;
     return obj;
   }, {});

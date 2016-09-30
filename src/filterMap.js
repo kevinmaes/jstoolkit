@@ -1,4 +1,6 @@
-import { identity, result } from './utils/'
+// import { identity, result } from './utils/'
+import identity from 'lodash/fp/identity'
+import result from 'lodash/fp/result'
 
 /**
  * A reducer implementation that simultaneously filters and then maps over

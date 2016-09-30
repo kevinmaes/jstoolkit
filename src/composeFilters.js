@@ -1,4 +1,4 @@
-import _ from 'lodash/fp'
+import find from 'lodash/fp/find'
 
 export default (...filters) =>
-  (...args) => !_.find(fn => !fn.apply(fn, args), filters)
+  (...args) => !find(fn => !fn.apply(fn, args), filters)

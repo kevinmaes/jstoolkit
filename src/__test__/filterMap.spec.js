@@ -1,5 +1,5 @@
-import { test } from '../spec_helper';
-import filterMap from '../filterMap';
+import { test } from '../spec_helper'
+import filterMap from '../filterMap'
 
 test('[filterMap] omitting the filter and map args', t => {
   const array = [1, 2, 3, 4, 5]

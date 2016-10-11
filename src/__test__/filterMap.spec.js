@@ -1,4 +1,4 @@
-import { test } from '../spec_helper'
+import { test, _ } from '../spec_helper'
 import filterMap from '../filterMap'
 
 test('[filterMap] omitting the filter and map args', t => {

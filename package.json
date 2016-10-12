@@ -11,7 +11,6 @@
     "doc:build": "documentation build src/index.js -f html -o doc",
     "doc:serve": "documentation serve src/index.js",
     "doc": "npm run doc:build && npm run doc:serve"
-
   },
   "repository": {
     "type": "git",

@@ -1,7 +1,7 @@
-import { test } from '../spec_helper';
-import keyMirror from '../keyMirror';
+import { test } from '../spec_helper'
+import keyMirror from '../keyMirror'
 
-test('[keyMirror xx]', t => {
+test('[keyMirror]', t => {
   const obj = {
     a: null,
     b: null,

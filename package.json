@@ -8,9 +8,10 @@
     "start": "webpack-dashboard -- node server.js",
     "lint": "eslint src && eslint tests",
     "test": "testem",
-    "doc:build": "documentation build src/index.js -f html -o doc",
+    "doc:html": "documentation build src/index.js -f html -o doc",
+    "doc:md": "documentation build src/index.js -f md -o doc.md",
     "doc:serve": "documentation serve src/index.js",
-    "doc": "npm run doc:build && npm run doc:serve"
+    "doc": "npm run doc:html && npm run doc:md && npm run doc:serve"
   },
   "repository": {
     "type": "git",
@@ -57,7 +58,6 @@
     "redux-devtools-diff-monitor": "^5.0.5",
     "redux-devtools-dock-monitor": "^1.1.1",
     "redux-devtools-log-monitor": "^1.0.11",
-    "sinon": "git+https://github.com/cjohansen/Sinon.JS#b672042043517b9f84e14ed0fb8265126168778a",
     "sinon-chai": "^2.8.0",
     "style-loader": "^0.13.1",
     "tape": "^4.5.1",

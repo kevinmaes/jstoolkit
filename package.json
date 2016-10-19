@@ -8,9 +8,10 @@
     "start": "webpack-dashboard -- node server.js",
     "lint": "eslint src && eslint tests",
     "test": "testem",
-    "doc:build": "documentation build src/index.js -f html -o doc",
+    "doc:html": "documentation build src/index.js -f html -o doc",
+    "doc:md": "documentation build src/index.js -f md -o doc.md",
     "doc:serve": "documentation serve src/index.js",
-    "doc": "npm run doc:build && npm run doc:serve"
+    "doc": "npm run doc:html && npm run doc:md && npm run doc:serve"
   },
   "repository": {
     "type": "git",

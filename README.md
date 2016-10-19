@@ -2,4 +2,4 @@
 
 localhost:4700
 
-Read the [Documentation](doc.md)
+Read the [Documentation](./doc.md)

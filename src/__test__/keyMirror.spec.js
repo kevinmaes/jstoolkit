@@ -1,5 +1,4 @@
-import * as helpers from '../spec_helper'
-const { chai: { expect } } = helpers
+import { expect } from '../spec_helper'
 import keyMirror from '../keyMirror'
 
 describe('keyMirror()', () => {

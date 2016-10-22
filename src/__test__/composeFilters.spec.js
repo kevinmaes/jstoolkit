@@ -13,21 +13,18 @@ describe('#composeFilters()', () => {
     expect(result).to.be.true
   })
 
+  it('should return false if its one and only filter returns false', () => {
+    const f = td.func('one')
+    td.when(f()).thenReturn(false)
+
+    const subject = composeFilters(f)
+    const result = subject()
+
+    expect(result).to.be.false
+  })
+
 })
-//
-// test('[composeFilters] single filter returning false' , t => {
-//   const f = td.func('one')
-//   td.when(f()).thenReturn(false)
-//
-//   const subject = composeFilters(f)
-//   const result = subject()
-//
-//   t.notOk(result,
-//     'composed filter should return false if its one filter returns false')
-//
-//   t.end()
-// })
-//
+
 // test('[composeFilters] should return true 2/2 filters return true', t => {
 //   const f1 = td.func('one')
 //   const f2 = td.func('two')

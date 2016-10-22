@@ -1,18 +1,19 @@
-// import { test, td } from '../spec_helper'
-// import composeFilters from '../composeFilters'
+import { expect, td } from '../spec_helper'
+import composeFilters from '../composeFilters'
 //
-// test('[composeFilters] single filter returning true' , t => {
-//   const f = td.func('one')
-//   td.when(f()).thenReturn(true)
-//
-//   const subject = composeFilters(f)
-//   const result = subject()
-//
-//   t.ok(result,
-//     'composed filter should return true if its one filter returns true')
-//
-//   t.end()
-// })
+describe('#composeFilters()', () => {
+
+  it('should return true if its one and only filter returns true', () => {
+    const f = td.func('one')
+    td.when(f()).thenReturn(true)
+
+    const subject = composeFilters(f)
+    const result = subject()
+
+    expect(result).to.be.true
+  })
+
+})
 //
 // test('[composeFilters] single filter returning false' , t => {
 //   const f = td.func('one')

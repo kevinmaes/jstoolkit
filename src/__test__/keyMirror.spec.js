@@ -1,20 +1,22 @@
-import { test } from '../spec_helper'
+import * as helpers from '../spec_helper'
+const { chai: { expect } } = helpers
 import keyMirror from '../keyMirror'
 
-test('[keyMirror]', t => {
-  const obj = {
-    a: null,
-    b: null,
-    c: null
-  };
+describe('keyMirror()', () => {
+  it('should create a key mirror for an object with keys', () => {
+    const obj = {
+        a: null,
+        b: null,
+        c: null
+      };
+    const expected = {
+      a: 'a',
+      b: 'b',
+      c: 'c'
+    }
 
-  const result = keyMirror(obj);
+    const result = keyMirror(obj);
 
-  t.deepEquals(result, {
-    a: 'a',
-    b: 'b',
-    c: 'c'
-  }, 'create a key mirror for an object with keys');
-
-  t.end();
-});
+    expect(result).to.eql(expected)
+  })
+})

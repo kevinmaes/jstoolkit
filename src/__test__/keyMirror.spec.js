@@ -1,7 +1,7 @@
 import { expect } from '../spec_helper'
 import keyMirror from '../keyMirror'
 
-describe('keyMirror()', () => {
+describe('#keyMirror()', () => {
   it('should create a key mirror for an object with keys', () => {
     const obj = {
         a: null,

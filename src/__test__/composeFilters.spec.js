@@ -1,6 +1,6 @@
 import { expect, td } from '../spec_helper'
 import composeFilters from '../composeFilters'
-//
+
 describe('#composeFilters()', () => {
 
   it('should return true if its one and only filter returns true', () => {

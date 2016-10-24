@@ -1,77 +1,66 @@
-// import { test, _ } from '../spec_helper'
-// import filterMap from '../filterMap'
+import { expect } from '../spec_helper'
+import filterMap from '../filterMap'
+
+describe('#filterMap()', () => {
+
+  it('should return the original array when omitting the filter and map args', () => {
+    const array = [1, 2, 3, 4, 5]
+
+    const result = filterMap(undefined, undefined, array);
+
+    expect(result).to.eql(array)
+  })
+
+  it('should filter out odd values when passing an "isEven" callback', () => {
+    const array = [1, 2, 3, 4, 5]
+    const isEven = arg => !(arg % 2)
+
+    const result = filterMap(isEven, undefined, array);
+
+    expect(result).to.eql([2, 4])
+  });
+
+it('should return an empty array when passing in a filter function, "isString"', () => {
+  const array = [1, 2, 3, 4, 5]
+  const isString = arg => typeof arg === 'string'
+
+  const result = filterMap(isString, undefined, array);
+
+  expect(result).to.eql([])
+});
+
+it('should return an array of object values when passing in a map function', () => {
+  const array = [
+    { id: 1, val: '1' },
+    { id: 2, val: '2' },
+    { id: 3, val: '3' },
+    { id: 4, val: '4' },
+    { id: 5, val: '5' }
+  ]
+  const getVal = arg => arg.val
+
+  const result = filterMap(undefined, getVal, array);
+
+  expect(result).to.eql(['1', '2', '3', '4', '5'])
+});
+
+it('should return an array of values when passing in filter and map functions', () => {
+  const array = [
+    { id: 1, val: '1' },
+    { id: 2, val: '2' },
+    { id: 3, val: '3' },
+    { id: 4, val: '4' },
+    { id: 5, val: '5' }
+  ]
+  const isEven = arg => !(arg.id % 2)
+  const getVal = arg => arg.val
+
+  const result = filterMap(isEven, getVal, array);
+
+  expect(result).to.eql(['2', '4'])
+});
 //
-// test('[filterMap] omitting the filter and map args', t => {
-//   const array = [1, 2, 3, 4, 5]
-//
-//   const result = filterMap(undefined, undefined, array);
-//
-//   t.deepEquals(result, array, 'return value should be the original array');
-//
-//   t.end();
-// });
-//
-// test('[filterMap] passing in a filter function, "isEven"', t => {
-//   const array = [1, 2, 3, 4, 5]
-//   const isEven = arg => !(arg % 2)
-//
-//   const result = filterMap(isEven, undefined, array);
-//
-//   t.deepEquals(result, [2, 4], 'return value should be only even values');
-//
-//   t.end();
-// });
-//
-// test('[filterMap] passing in a filter function, "isString"', t => {
-//   const array = [1, 2, 3, 4, 5]
-//   const isString = arg => typeof arg === 'string'
-//
-//   const result = filterMap(isString, undefined, array);
-//
-//   t.deepEquals(result, [],
-//     'return value should be an empty array (no strings)');
-//
-//   t.end();
-// });
-//
-// test('[filterMap] passing in a map function (no filter function)', t => {
-//   const array = [
-//     { id: 1, val: '1' },
-//     { id: 2, val: '2' },
-//     { id: 3, val: '3' },
-//     { id: 4, val: '4' },
-//     { id: 5, val: '5' }
-//   ]
-//   const getVal = arg => arg.val
-//
-//   const result = filterMap(undefined, getVal, array);
-//
-//   t.deepEquals(result, ['1', '2', '3', '4', '5'],
-//     'return value should be an array of object values');
-//
-//   t.end();
-// });
-//
-// test('[filterMap] passing in filter and map functions', t => {
-//   const array = [
-//     { id: 1, val: '1' },
-//     { id: 2, val: '2' },
-//     { id: 3, val: '3' },
-//     { id: 4, val: '4' },
-//     { id: 5, val: '5' }
-//   ]
-//   const isEven = arg => !(arg.id % 2)
-//   const getVal = arg => arg.val
-//
-//   const result = filterMap(isEven, getVal, array);
-//
-//   t.deepEquals(result, ['2', '4'],
-//     'return value should be an array of values of the filtered object array');
-//
-//   t.end();
-// });
-//
-// test('[filterMap] passing in a composed filter function and map function', t => {
+// it('should passing in a composed filter function and map function', () => {
 //   const array = [
 //     { id: 1, val: '1' },
 //     { id: 2, val: '2' },
@@ -92,7 +81,7 @@
 //   t.end();
 // });
 //
-// test('[filterMap] passing in comosed filter and map functions', t => {
+// it('should passing in comosed filter and map functions', () => {
 //   const array = [
 //     { id: 1, val: '1' },
 //     { id: 2, val: '2' },
@@ -114,7 +103,7 @@
 //   t.end();
 // });
 //
-// test('[filterMap] passing in an optional "until" value', t => {
+// it('should passing in an optional "until" value', () => {
 //   const array = [1, 2, 3, 4, 5]
 //   const isOdd = arg => !!(arg % 2)
 //
@@ -126,7 +115,7 @@
 //   t.end();
 // });
 //
-// test('[filterMap] passing in filter function and a map property string', t => {
+// it('should passing in filter function and a map property string', () => {
 //   const array = [
 //     { id: 1, val: '1' },
 //     { id: 2, val: '2' },
@@ -144,7 +133,7 @@
 //   t.end();
 // });
 //
-// test('[filterMap] passing in filter function and a map property string (method name)', t => {
+// it('should passing in filter function and a map property string (method name)', () => {
 //   const array = [
 //     { id: 1, val: () => '1' },
 //     { id: 2, val: () => '2' },
@@ -161,3 +150,5 @@
 //
 //   t.end();
 // });
+
+})

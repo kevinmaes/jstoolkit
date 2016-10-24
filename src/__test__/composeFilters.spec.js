@@ -23,64 +23,52 @@ describe('#composeFilters()', () => {
     expect(result).to.be.false
   })
 
-})
+  it('should return true 2/2 filters return true', () => {
+    const f1 = td.func('one')
+    const f2 = td.func('two')
+    td.when(f1()).thenReturn(true)
+    td.when(f2()).thenReturn(true)
 
-// test('[composeFilters] should return true 2/2 filters return true', t => {
-//   const f1 = td.func('one')
-//   const f2 = td.func('two')
-//   td.when(f1()).thenReturn(true)
-//   td.when(f2()).thenReturn(true)
-//
-//   const subject = composeFilters(f1, f2)
-//   const result = subject()
-//
-//   t.ok(result,
-//     'composed filter should return true if 2/2 filters return true')
-//
-//   t.end()
-// })
-//
-// test('[composeFilters] should return false if 2/2 filters return false', t => {
-//   const f1 = td.func('one')
-//   const f2 = td.func('two')
-//   td.when(f1()).thenReturn(false)
-//   td.when(f2()).thenReturn(false)
-//
-//   const subject = composeFilters(f1, f2)
-//   const result = subject()
-//
-//   t.notOk(result,
-//     'composed filter should return false if 2/2 filters return false')
-//
-//   t.end()
-// })
-//
-// test('[composeFilters] should return false if the first of 2 filters return false', t => {
-//   const f1 = td.func('one')
-//   const f2 = td.func('two')
-//   td.when(f1()).thenReturn(false)
-//   td.when(f2()).thenReturn(true)
-//
-//   const subject = composeFilters(f1, f2)
-//   const result = subject()
-//
-//   t.notOk(result,
-//     'composed filter should return false if the first of 2 filters return false')
-//
-//   t.end()
-// })
-//
-// test('[composeFilters] should return false if the second of 2 filters return false', t => {
-//   const f1 = td.func('one')
-//   const f2 = td.func('two')
-//   td.when(f1()).thenReturn(true)
-//   td.when(f2()).thenReturn(false)
-//
-//   const subject = composeFilters(f1, f2)
-//   const result = subject()
-//
-//   t.notOk(result,
-//     'composed filter should return false if the second of 2 filters return false')
-//
-//   t.end()
-// })
+    const subject = composeFilters(f1, f2)
+    const result = subject()
+
+    expect(result).to.be.true
+  })
+
+  it('should return false if 2/2 filters return false', () => {
+    const f1 = td.func('one')
+    const f2 = td.func('two')
+    td.when(f1()).thenReturn(false)
+    td.when(f2()).thenReturn(false)
+
+    const subject = composeFilters(f1, f2)
+    const result = subject()
+
+    expect(result).to.be.false
+  })
+
+  it('should return false if the first of 2 filters return false', () => {
+    const f1 = td.func('one')
+    const f2 = td.func('two')
+    td.when(f1()).thenReturn(false)
+    td.when(f2()).thenReturn(true)
+
+    const subject = composeFilters(f1, f2)
+    const result = subject()
+
+    expect(result).to.be.false
+  })
+
+  it('should return false if the second of 2 filters return false', () => {
+    const f1 = td.func('one')
+    const f2 = td.func('two')
+    td.when(f1()).thenReturn(true)
+    td.when(f2()).thenReturn(false)
+
+    const subject = composeFilters(f1, f2)
+    const result = subject()
+
+    expect(result).to.be.false
+  })
+
+})

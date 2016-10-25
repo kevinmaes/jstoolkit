@@ -1,0 +1,8 @@
+framework: tap
+src_files: ["build/test.js"]
+launch_in_dev: []
+launchers:
+  Node:
+    Command: mocha build/test.js
+launch_in_dev:
+- Node

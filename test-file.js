@@ -25,6 +25,8 @@ describe('some suite', () => {
     console.log('test')
     return true
   })
-
-
+  it('some test', () => {
+    console.log('test2')
+    return true
+  })
 })

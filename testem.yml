@@ -1,0 +1,4 @@
+src_files: ["build/test.js"]
+launchers:
+  Node:
+    command: mocha build/test.js

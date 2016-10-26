@@ -1,3 +1,4 @@
+framework: "mocha"
 src_files: ["build/test.js"]
 launchers:
   Node:

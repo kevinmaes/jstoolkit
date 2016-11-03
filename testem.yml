@@ -1,8 +1,4 @@
 src_files: ["build/test.js"]
 launchers:
   Node:
-    command: mocha test-file.js
-launch_in_dev:
-- Node
-launch_in_ci:
-- Node
+    command: mocha build/test.js

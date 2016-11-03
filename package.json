@@ -1,7 +1,7 @@
 {
-  "name": "nitro-client-scaffolding",
+  "name": "jstoolkit",
   "version": "1.0.0",
-  "description": "Easy to fork project setup",
+  "description": "A small collection of utility functions",
   "main": "app.js",
   "scripts": {
     "clean": "rimraf dist",
@@ -18,13 +18,9 @@
     "url": "git+https://github.com/ThomsonReutersEikon/nitro-client-scaffolding.git"
   },
   "keywords": [
-    "scaffolding",
-    "boilerplate",
-    "tools",
-    "npm",
-    "babel",
-    "eslint",
-    "react"
+    "javascript",
+    "fp",
+    "utils"
   ],
   "author": "EM Client Team",
   "license": "ISC",

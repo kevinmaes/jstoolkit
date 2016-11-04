@@ -1,27 +1,26 @@
-import { test } from '../../spec_helper'
+import { expect } from '../../spec_helper'
 import { toKeys } from '../'
 
-test('[toKeys]', t => {
-  const array = ['a', 'b', 'c']
+describe('#toKeys()', () => {
 
-  const result = toKeys(array)
+  it('should return an array with the same string elements', () => {
+    const array = ['a', 'b', 'c']
 
-  t.deepEquals(result, array, 'keys should be a similar array')
+    const result = toKeys(array)
 
-  t.end()
-});
+    expect(result).to.eql(array)
+  });
 
-test('[toKeys]', t => {
-  const obj = {
-    a: null,
-    b: null,
-    c: null
-  };
+  it('should return an array of the object keys', () => {
+    const obj = {
+      a: null,
+      b: null,
+      c: null
+    };
 
-  const result = toKeys(obj)
+    const result = toKeys(obj)
 
-  t.deepEquals(result, ['a', 'b', 'c'],
-    'keys should be an array of the object keys')
+    expect(result).to.eql(['a', 'b', 'c'])
+  })
 
-  t.end()
 })

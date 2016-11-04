@@ -1,10 +1,9 @@
-import tape from 'tape-catch';
 import _ from 'lodash/fp';
 import deepFreeze from 'deep-freeze';
 import td from 'testdouble';
+import chai from 'chai'
 
-// Add other types of assertions to tape.
-import addAssertions from 'extend-tape';
-const test = addAssertions(tape, {});
+const { expect } = chai
 
-export { _, deepFreeze, td, test };
+// Export an object with spec helper functions or libraries.
+export { _, deepFreeze, td, expect };

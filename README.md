@@ -25,7 +25,7 @@ Install Node `>= 6.x` and npm `>= 3.x`.
 ### Testing
 
 Tests are using the following tools:
-* [tape](https://github.com/substack/tape) test harness for node and browsers
+* [mocha](https://mochajs.org/) JavaScript test framework for node and browsers
 * [testem](https://github.com/testem/testem) test runner
 * [testdouble](https://github.com/testdouble/testdouble.js) test double library for TDD with JavaScript
 * [webpack HMR](https://webpack.github.io/docs/hot-module-replacement.html) hot module replacement using webpack

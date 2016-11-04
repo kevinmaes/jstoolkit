@@ -1,8 +1,8 @@
-framework: "tap"
+framework: "mocha"
 src_files: ["build/test.js"]
 launchers:
   Node:
-    command: tape build/test.js
+    command: mocha build/test.js
 launch_in_dev:
   - Node
 launch_in_ci:

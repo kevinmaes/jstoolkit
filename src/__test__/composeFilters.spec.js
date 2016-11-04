@@ -1,88 +1,74 @@
-import { test, td } from '../spec_helper'
+import { expect, td } from '../spec_helper'
 import composeFilters from '../composeFilters'
 
-test('[composeFilters] single filter returning true' , t => {
-  const f = td.func('one')
-  td.when(f()).thenReturn(true)
+describe('#composeFilters()', () => {
 
-  const subject = composeFilters(f)
-  const result = subject()
+  it('should return true if its one and only filter returns true', () => {
+    const f = td.func('one')
+    td.when(f()).thenReturn(true)
 
-  t.ok(result,
-    'composed filter should return true if its one filter returns true')
+    const subject = composeFilters(f)
+    const result = subject()
 
-  t.end()
-})
+    expect(result).to.be.true
+  })
 
-test('[composeFilters] single filter returning false' , t => {
-  const f = td.func('one')
-  td.when(f()).thenReturn(false)
+  it('should return false if its one and only filter returns false', () => {
+    const f = td.func('one')
+    td.when(f()).thenReturn(false)
 
-  const subject = composeFilters(f)
-  const result = subject()
+    const subject = composeFilters(f)
+    const result = subject()
 
-  t.notOk(result,
-    'composed filter should return false if its one filter returns false')
+    expect(result).to.be.false
+  })
 
-  t.end()
-})
+  it('should return true 2/2 filters return true', () => {
+    const f1 = td.func('one')
+    const f2 = td.func('two')
+    td.when(f1()).thenReturn(true)
+    td.when(f2()).thenReturn(true)
 
-test('[composeFilters] should return true 2/2 filters return true', t => {
-  const f1 = td.func('one')
-  const f2 = td.func('two')
-  td.when(f1()).thenReturn(true)
-  td.when(f2()).thenReturn(true)
+    const subject = composeFilters(f1, f2)
+    const result = subject()
 
-  const subject = composeFilters(f1, f2)
-  const result = subject()
+    expect(result).to.be.true
+  })
 
-  t.ok(result,
-    'composed filter should return true if 2/2 filters return true')
+  it('should return false if 2/2 filters return false', () => {
+    const f1 = td.func('one')
+    const f2 = td.func('two')
+    td.when(f1()).thenReturn(false)
+    td.when(f2()).thenReturn(false)
 
-  t.end()
-})
+    const subject = composeFilters(f1, f2)
+    const result = subject()
 
-test('[composeFilters] should return false if 2/2 filters return false', t => {
-  const f1 = td.func('one')
-  const f2 = td.func('two')
-  td.when(f1()).thenReturn(false)
-  td.when(f2()).thenReturn(false)
+    expect(result).to.be.false
+  })
 
-  const subject = composeFilters(f1, f2)
-  const result = subject()
+  it('should return false if the first of 2 filters return false', () => {
+    const f1 = td.func('one')
+    const f2 = td.func('two')
+    td.when(f1()).thenReturn(false)
+    td.when(f2()).thenReturn(true)
 
-  t.notOk(result,
-    'composed filter should return false if 2/2 filters return false')
+    const subject = composeFilters(f1, f2)
+    const result = subject()
 
-  t.end()
-})
+    expect(result).to.be.false
+  })
 
-test('[composeFilters] should return false if the first of 2 filters return false', t => {
-  const f1 = td.func('one')
-  const f2 = td.func('two')
-  td.when(f1()).thenReturn(false)
-  td.when(f2()).thenReturn(true)
+  it('should return false if the second of 2 filters return false', () => {
+    const f1 = td.func('one')
+    const f2 = td.func('two')
+    td.when(f1()).thenReturn(true)
+    td.when(f2()).thenReturn(false)
 
-  const subject = composeFilters(f1, f2)
-  const result = subject()
+    const subject = composeFilters(f1, f2)
+    const result = subject()
 
-  t.notOk(result,
-    'composed filter should return false if the first of 2 filters return false')
+    expect(result).to.be.false
+  })
 
-  t.end()
-})
-
-test('[composeFilters] should return false if the second of 2 filters return false', t => {
-  const f1 = td.func('one')
-  const f2 = td.func('two')
-  td.when(f1()).thenReturn(true)
-  td.when(f2()).thenReturn(false)
-
-  const subject = composeFilters(f1, f2)
-  const result = subject()
-
-  t.notOk(result,
-    'composed filter should return false if the second of 2 filters return false')
-
-  t.end()
 })

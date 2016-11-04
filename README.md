@@ -9,8 +9,8 @@ These methods are meant to compliment the vast suite of methods already availabl
 Install Node `>= 6.x` and npm `>= 3.x`.
 
 1. Clone the repository.
-1. `npm i` or `npm yarn install`
-1. `npm start`
+2. `npm i` or `npm yarn install`
+3. `npm start`
 
 ### Scripts.
 
@@ -30,9 +30,11 @@ Tests are using the following tools:
 * [testdouble](https://github.com/testdouble/testdouble.js) test double library for TDD with JavaScript
 * [webpack HMR](https://webpack.github.io/docs/hot-module-replacement.html) hot module replacement using webpack
 
-1) Run `npm start` to start the webpack live watch mode for HMR.
-2) Run `npm t` to build the test bundle and to run the tests.
-3) View test results in the terminal window and/or open `http://localhost:7357/` in a web browser to see the results of the tests.
+You can run tests with the following steps:
+
+1. Run `npm start` to start the webpack live watch mode for HMR.
+2. Run `npm t` to build the test bundle and to run the tests.
+3. View test results in the terminal window and/or open `http://localhost:7357/` in a web browser to see the results of the tests.
 
 Changing either source files or test files will immediately result in an incremental build (HMR) and re-run of all of the tests.
 

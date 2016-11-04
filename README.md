@@ -2,7 +2,7 @@
 
 *A small collection of utility functions to help with functional programming in JavaScript.*
 
-These methods are meant to compliment the vast suite of methods already available in libraries like [lodash/fp](https://github.com/lodash/lodash/wiki/FP-Guide). This is a work in progress and more methods will be added in the future.
+These methods are meant to compliment the vast suite of methods already available in libraries like [lodash/fp](https://github.com/lodash/lodash/wiki/FP-Guide). In fact, this library itself uses some of the lodash/fp methods. This is a work in progress and more methods will be added in the future.
 
 You can [read the API docs here](doc.md).
 

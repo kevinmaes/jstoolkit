@@ -4,6 +4,8 @@
 
 These methods are meant to compliment the vast suite of methods already available in libraries like [lodash/fp](https://github.com/lodash/lodash/wiki/FP-Guide). This is a work in progress and more methods will be added in the future.
 
+You can [read the API docs here](doc.md).
+
 ### Getting Started
 
 Install Node `>= 6.x` and npm `>= 3.x`.

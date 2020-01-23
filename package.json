@@ -49,7 +49,7 @@
     "ncp": "^2.0.0",
     "react-addons-test-utils": "15.3.1",
     "react-hot-loader": "^1.1.7",
-    "react-unit": "^2.0.0",
+    "react-unit": "^3.0.3",
     "redux-devtools": "^3.3.1",
     "redux-devtools-chart-monitor": "^1.4.2",
     "redux-devtools-diff-monitor": "^5.0.5",

@@ -48,7 +48,7 @@
     "mocha": "^3.1.2",
     "ncp": "^2.0.0",
     "react-addons-test-utils": "15.3.1",
-    "react-hot-loader": "^1.1.7",
+    "react-hot-loader": "^4.13.0",
     "react-unit": "^2.0.0",
     "redux-devtools": "^3.3.1",
     "redux-devtools-chart-monitor": "^1.4.2",

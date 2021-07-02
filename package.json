@@ -82,6 +82,6 @@
     "reselect": "^2.5.3",
     "rimraf": "^2.5.4",
     "shortid": "^2.2.6",
-    "webpack": "^1.13.2"
+    "webpack": "^5.42.0"
   }
 }
